@@ -758,7 +758,6 @@ a {
   margin: 0;
   color: #2d3651;
   font-family: "Roboto Slab", serif;
-  font-size: 2.5rem;
   letter-spacing: 0.1em;
   line-height: 1.2em;
 }
@@ -840,6 +839,9 @@ a {
     gap: 10px;
     grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
   }
+  .about-content--title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 991.8px) and (min-width: 768px) {
@@ -856,6 +858,9 @@ a {
   .skills__container {
     gap: 10px;
     grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+  }
+  .about-content--title {
+    font-size: 2rem;
   }
 }
 
@@ -894,6 +899,12 @@ a {
   }
   .skill-item__title {
     font-size: 1.125rem;
+  }
+  .about-content--title {
+    font-size: 1.5rem;
+  }
+  .about-content--txt {
+    font-size: 1rem;
   }
 }
 
