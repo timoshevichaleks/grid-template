@@ -1,95 +1,135 @@
 .about {
-    letter-spacing: 0.055em;
-    background-color: $color-gray-light;
-    @include lg-min {
-        padding: 100px 0;
+  letter-spacing: 0.055em;
+
+  background-color: $color-gray-light;
+
+  @include lg-min {
+    padding: 100px 0;
+  }
+  @include lg-md {
+    padding-top: 77px;
+    padding-bottom: 54px;
+  }
+  @include md-sm {
+    padding-top: 58px;
+    padding-bottom: 56px;
+  }
+  @include sm {
+    padding-top: 57px;
+    padding-bottom: 68px;
+  }
+  &__container {
+    display: grid;
+
+    @include ul-min {
+      max-width: $ul;
+      margin: auto;
     }
-    @include lg-md {
-        padding-top: 77px;
-        padding-bottom: 54px;
-    }
-    @include md-sm {
-        padding-top: 58px;
-        padding-bottom: 56px;
+    @include sm-min {
+      padding: 0 $gap;
+
+      grid-template-areas: "txt ln img";
     }
     @include sm {
-        padding-top: 57px;
-        padding-bottom: 68px;
+      padding: 0 ($gap + 2);
+
+      grid-template-areas: "txt" "img";
     }
-    &__container {
-        display: grid;
-        @include ul-min {
-            max-width: $ul;
-            margin: auto;
-        }
-        @include sm-min {
-            grid-template-areas: "txt img";
-            padding: 0 $gap;
-        }
-        @include sm {
-            grid-template-areas: "txt" "img";
-            padding: 0 ($gap + 2);
-        }
+  }
+  &-content {
+    grid-area: txt;
+    @include lg-min {
+      margin-right: 93px;
     }
-    &-content {
-        grid-area: txt;
+    @include lg-md {
+      margin-right: 66px;
+    }
+    @include md-sm {
+      margin-right: 74px;
+    }
+    &--title {
+      margin: 0;
+
+      letter-spacing: 0.1em;
+
+      color: $color-primary;
+
+      font-family: $font-header;
+      line-height: 1.2em;
+
+      @include lg-min {
+        font-size: 2.5rem;
+      }
+      @include lg-md {
+        font-size: 2rem;
+      }
+      @include md {
+        font-size: 1.5rem;
+      }
+      @include sm {
+        text-align: center;
+      }
+    }
+    &--txt {
+      position: relative;
+
+      letter-spacing: 0.05em;
+
+      color: $color-gray;
+
+      font-family: $font-main;
+      font-size: 1.125rem;
+      line-height: 1.32em;
+
+      @include lg-min {
+        margin-top: 50px;
+      }
+      @include lg-md {
+        margin-top: 34px;
+      }
+      @include md-sm {
+        margin-top: 26px;
+
+        font-size: 1rem;
+      }
+      @include sm {
+        margin-top: 21px;
+        margin-bottom: 39px;
+      }
+      & p:first-of-type::after {
+        position: absolute;
+        top: 0;
+
+        width: 2px;
+        height: 200px;
+
+        content: "";
+
+        background-color: rgb(112, 112, 112);
+
         @include lg-min {
-            margin-right: 93px;
+          right: -50px;
         }
         @include lg-md {
-            margin-right: 66px;
+          right: -24.5px;
         }
         @include md-sm {
-            margin-right: 74px;
+          right: -18.5px;
         }
-        &--title {
-            margin: 0;
-            color: $color-primary;
-            font-family: $font-header;
-            letter-spacing: 0.1em;
-            line-height: 1.2em;
-            @include lg-min {
-                font-size: 2.5rem;
-            }
-            @include lg-md {
-                font-size: 2rem;
-            }
-            @include md {
-                font-size: 1.5rem;
-            }
-            @include sm {
-                text-align: center;
-            }
+        @include sm {
+          display: none;
         }
-        &--txt {
-            font-family: $font-main;
-            color: $color-gray;
-            font-size: 1.125rem;
-            letter-spacing: 0.05em;
-            line-height: 1.32em;
-            @include lg-min {
-                margin-top: 50px;
-            }
-            @include lg-md {
-                margin-top: 34px;
-            }
-            @include md-sm {
-                margin-top: 26px;
-                font-size: 1rem;
-            }
-            @include sm {
-                margin-top: 21px;
-                margin-bottom: 39px;
-            }
-        }
+      }
     }
-    &-image {
-        display: grid;
-        justify-content: center;
-        grid-area: img;
-        & img {
-            max-height: 487.08px;
-            max-width: 100%;
-        }
+  }
+  &-image {
+    display: grid;
+    justify-content: center;
+
+    grid-area: img;
+    & img {
+      max-width: 100%;
+      max-height: 487.08px;
     }
+  }
 }
