@@ -105,7 +105,7 @@
 
         content: "";
 
-        background-color: rgb(112, 112, 112);
+        background-color: rgba(112, 112, 112, 0.27);
 
         @include lg-min {
           right: -50px;

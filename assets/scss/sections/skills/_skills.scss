@@ -10,7 +10,7 @@
     display: grid;
 
     margin-bottom: $gap;
-    // grid-template-columns: rep  eat(4, 1fr);
+    // grid-template-columns: repeat(4, 1fr);
 
     @include lg-min {
       gap: $gap / 2;
