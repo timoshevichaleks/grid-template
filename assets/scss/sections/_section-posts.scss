@@ -1,0 +1,135 @@
+.posts {
+  padding: ($gap * 5) 0;
+  &__container {
+    @extend %container;
+  }
+  h2 {
+    letter-spacing: 0.1em;
+
+    color: $color-primary;
+
+    font-family: $font-header;
+    font-weight: bold;
+
+    @include lg-min {
+      margin: 0;
+
+      font-size: 2.5rem;
+    }
+    @include lg-md {
+      margin-top: 0;
+
+      font-size: 2rem;
+    }
+    @include md {
+      margin-top: 0;
+
+      font-size: 1.5rem;
+    }
+    @include sm {
+      margin-top: 0;
+
+      text-align: center;
+    }
+  }
+  &__block {
+    display: grid;
+
+    margin-bottom: 20px;
+
+    gap: $gap;
+    @include lg-min {
+      margin-top: 58px;
+
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include lg-md {
+      margin-top: 32px;
+
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      margin-top: 7px;
+
+      grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
+      grid-template-columns: 1fr, 1fr;
+    }
+    @include sm {
+      margin-top: 11px;
+
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
+      grid-template-columns: 1fr;
+    }
+  }
+  &-article {
+    transition: background-color 0.5s;
+
+    background-color: rgb(238, 238, 238);
+
+    font-family: $font-header;
+    &-link {
+      display: grid;
+
+      height: 100%;
+
+      grid-template-rows: 300px 1fr;
+    }
+    &__image {
+      display: flex;
+      overflow: hidden;
+      align-content: center;
+      justify-content: center;
+      img {
+        width: 100%;
+
+        transition: transform 0.5s;
+      }
+    }
+    &__text {
+      display: grid;
+      align-content: center;
+
+      padding: $gap;
+
+      transition: color 0.5s;
+      text-align: center;
+
+      color: $color-gray;
+      h3 {
+        letter-spacing: 0.05em;
+
+        font-size: 1.125rem;
+        font-weight: bold;
+      }
+      p {
+        margin: 16px 0;
+
+        letter-spacing: 0.001em;
+
+        font-family: $font-main;
+        font-size: 1rem;
+      }
+    }
+    &:hover {
+      background-color: $color-gray-light;
+      .posts-article__image img {
+        transform: scale(1.1);
+      }
+      .posts-article__text {
+        color: $color-light;
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@for $i from 1 through 9 {
+  .posts-article:nth-of-type(#{$i}) {
+    grid-area: a#{$i};
+  }
+}
