@@ -1,0 +1,88 @@
+.footer {
+  background-color: $color-primary;
+  &__container {
+    @extend %container;
+    @include md-min {
+      padding-top: 39px;
+      padding-bottom: 72px;
+    }
+    @include md {
+      padding-top: 49px;
+      padding-bottom: 57px;
+    }
+  }
+  &-social {
+    position: relative;
+
+    display: grid;
+    justify-content: center;
+
+    margin-bottom: 50px;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    &__link {
+      padding: 10px;
+      .fab {
+        transition: color 0.5s;
+        text-decoration: inherit;
+        letter-spacing: 0.005em;
+
+        font-family: "Font Awesome 5 Brands";
+        font-size: 36px;
+        font-weight: normal;
+        font-style: normal;
+      }
+      .fab:hover,
+      .fab:focus {
+        color: $color-accent;
+      }
+      .fa-vk::before {
+        content: "\f189";
+      }
+      .fa-twitter-square::before {
+        content: "\f081";
+      }
+      .fa-facebook-square::before {
+        content: "\f082";
+      }
+      .fa-telegram-plane::before {
+        content: "\f3fe";
+      }
+      .fa-instagram::before {
+        content: "\f16d";
+      }
+    }
+    &::after {
+      position: absolute;
+      bottom: -20px;
+      left: calc(50% - 75px / 2);
+
+      width: 75px;
+      height: 2px;
+
+      content: "";
+
+      background-color: rgba($color-light, 0.1);
+    }
+  }
+  &__title {
+    text-align: center;
+    .accent {
+      margin-right: -0.5em;
+
+      letter-spacing: 0.33em;
+
+      font: normal normal 100 16px/20px "Roboto";
+      // color: $color-gray-dark;
+    }
+    span {
+      letter-spacing: 0.05em;
+
+      color: $color-light;
+
+      font-family: $font-main;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}
