@@ -47,7 +47,7 @@
     @include md-sm {
       margin-right: 74px;
     }
-    &--title {
+    &__title {
       margin: 0;
 
       letter-spacing: 0.1em;
@@ -70,7 +70,7 @@
         text-align: center;
       }
     }
-    &--txt {
+    &__txt {
       position: relative;
 
       letter-spacing: 0.05em;

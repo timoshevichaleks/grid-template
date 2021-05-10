@@ -48,12 +48,11 @@
       transition: background-color 0.5s, border-color 0.5s;
       letter-spacing: 0.1em;
 
-      color: rgba($color-light, 0.51);
       border-color: rgba($color-light, 0.05);
       background-color: rgba($color-light, 0.05);
       &:hover,
       &:focus {
-        color: $color-light;
+        color: rgba($color-light, 0.99);
         border-bottom: 2px solid $color-light;
         outline: none;
         background-color: rgba($color-light, 0.15);
@@ -69,6 +68,7 @@
         background-color: $color-accent;
       }
       &--primary {
+        color: $color-light;
         border-color: rgba($color-light, 0);
         background-color: rgba($color-light, 0.05);
       }

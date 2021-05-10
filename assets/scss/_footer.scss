@@ -3,8 +3,8 @@
   &__container {
     @extend %container;
     @include md-min {
-      padding-top: 39px;
-      padding-bottom: 72px;
+      padding-top: 50px;
+      padding-bottom: 70px;
     }
     @include md {
       padding-top: 49px;
@@ -17,39 +17,39 @@
     display: grid;
     justify-content: center;
 
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
     &__link {
       padding: 10px;
       .fab {
         transition: color 0.5s;
-        text-decoration: inherit;
-        letter-spacing: 0.005em;
+        // text-decoration: inherit;
+        letter-spacing: 0.004em;
 
         font-family: "Font Awesome 5 Brands";
         font-size: 36px;
-        font-weight: normal;
+        font-weight: 400;
         font-style: normal;
       }
       .fab:hover,
       .fab:focus {
         color: $color-accent;
       }
-      .fa-vk::before {
-        content: "\f189";
+      .fa-facebook-square::before {
+        content: "\f082";
+      }
+      .fa-google-plus-square::before {
+        content: "\f0d4";
       }
       .fa-twitter-square::before {
         content: "\f081";
       }
-      .fa-facebook-square::before {
-        content: "\f082";
+      .fa-pinterest-square::before {
+        content: "\f0d3";
       }
-      .fa-telegram-plane::before {
-        content: "\f3fe";
-      }
-      .fa-instagram::before {
-        content: "\f16d";
+      .fa-flickr::before {
+        content: "\f16e";
       }
     }
     &::after {
@@ -67,22 +67,24 @@
   }
   &__title {
     text-align: center;
+
+    font-family: $font-main;
     .accent {
       margin-right: -0.5em;
 
       letter-spacing: 0.33em;
-
-      font: normal normal 100 16px/20px "Roboto";
+      /* normal normal 100 16px/20px "Roboto" */
       // color: $color-gray-dark;
+
+      font-weight: 100;
     }
     span {
       letter-spacing: 0.05em;
 
       color: $color-light;
 
-      font-family: $font-main;
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 700;
     }
   }
 }

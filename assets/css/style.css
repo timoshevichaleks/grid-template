@@ -371,7 +371,7 @@ html {
 
 h1 {
   letter-spacing: 0.08em;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 300;
   line-height: 1.2em;
 }
@@ -748,7 +748,7 @@ a {
   grid-area: txt;
 }
 
-.about-content--title {
+.about-content__title {
   margin: 0;
   letter-spacing: 0.1em;
   color: #2d3651;
@@ -756,7 +756,7 @@ a {
   line-height: 1.2em;
 }
 
-.about-content--txt {
+.about-content__txt {
   position: relative;
   letter-spacing: 0.05em;
   color: #637588;
@@ -765,7 +765,7 @@ a {
   line-height: 1.32em;
 }
 
-.about-content--txt p:first-of-type::after {
+.about-content__txt p:first-of-type::after {
   position: absolute;
   top: 0;
   width: 2px;
@@ -805,13 +805,12 @@ a {
   -o-transition: background-color 0.5s, border-color 0.5s;
   transition: background-color 0.5s, border-color 0.5s;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.51);
   border-color: rgba(255, 255, 255, 0.05);
   background-color: rgba(255, 255, 255, 0.05);
 }
 
 .form-content__input:hover, .form-content__input:focus {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.99);
   border-bottom: 2px solid #ffffff;
   outline: none;
   background-color: rgba(255, 255, 255, 0.15);
@@ -830,6 +829,7 @@ a {
 }
 
 .form-content .btn--primary {
+  color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0.05);
 }
@@ -855,11 +855,12 @@ a {
   -webkit-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
-  background-color: #eeeeee;
+  background-color: #f2f2f2;
+  /* rgb(238, 238, 238) */
   font-family: "Roboto Slab", serif;
 }
 
-.posts-article-link {
+.posts-article__link {
   display: grid;
   height: 100%;
   grid-template-rows: 300px 1fr;
@@ -912,7 +913,7 @@ a {
 }
 
 .posts-article:hover {
-  background-color: #e5e5e5;
+  background-color: #d8d8d8;
 }
 
 .posts-article:hover .posts-article__image img {
@@ -922,7 +923,7 @@ a {
 }
 
 .posts-article:hover .posts-article__text {
-  color: #ffffff;
+  color: #2d3651;
 }
 
 .posts__actions {
@@ -980,9 +981,9 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 40px;
   grid-template-columns: repeat(auto-fit, minmax(50px, -webkit-max-content));
   grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-  margin-bottom: 50px;
 }
 
 .footer-social__link {
@@ -990,15 +991,14 @@ a {
 }
 
 .footer-social__link .fab {
-  font-family: "Font Awesome 5 Brands";
-  font-size: 36px;
-  letter-spacing: 0.005em;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
   -webkit-transition: color 0.5s;
   -o-transition: color 0.5s;
   transition: color 0.5s;
+  letter-spacing: 0.004em;
+  font-family: "Font Awesome 5 Brands";
+  font-size: 36px;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .footer-social__link .fab:hover,
@@ -1006,52 +1006,53 @@ a {
   color: #d66926;
 }
 
-.footer-social__link .fa-vk::before {
-  content: "\f189";
+.footer-social__link .fa-facebook-square::before {
+  content: "\f082";
+}
+
+.footer-social__link .fa-google-plus-square::before {
+  content: "\f0d4";
 }
 
 .footer-social__link .fa-twitter-square::before {
   content: "\f081";
 }
 
-.footer-social__link .fa-facebook-square::before {
-  content: "\f082";
+.footer-social__link .fa-pinterest-square::before {
+  content: "\f0d3";
 }
 
-.footer-social__link .fa-telegram-plane::before {
-  content: "\f3fe";
-}
-
-.footer-social__link .fa-instagram::before {
-  content: "\f16d";
+.footer-social__link .fa-flickr::before {
+  content: "\f16e";
 }
 
 .footer-social::after {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.1);
+  bottom: -20px;
+  left: calc(50% - 75px / 2);
   width: 75px;
   height: 2px;
-  bottom: -20px;
   content: "";
-  left: calc(50% - 75px / 2);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer__title {
   text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .footer__title .accent {
-  font: normal normal 100 16px/20px "Roboto";
   margin-right: -0.5em;
   letter-spacing: 0.33em;
+  /* normal normal 100 16px/20px "Roboto" */
+  font-weight: 100;
 }
 
 .footer__title span {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 1rem;
   letter-spacing: 0.05em;
   color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 @media (min-width: 576px) {
@@ -1098,8 +1099,8 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
   .footer__container {
-    padding-top: 39px;
-    padding-bottom: 72px;
+    padding-top: 50px;
+    padding-bottom: 70px;
   }
 }
 
@@ -1125,13 +1126,13 @@ a {
   .about-content {
     margin-right: 93px;
   }
-  .about-content--title {
+  .about-content__title {
     font-size: 2.5rem;
   }
-  .about-content--txt {
+  .about-content__txt {
     margin-top: 50px;
   }
-  .about-content--txt p:first-of-type::after {
+  .about-content__txt p:first-of-type::after {
     right: -50px;
   }
   .form {
@@ -1189,13 +1190,13 @@ a {
   .about-content {
     margin-right: 66px;
   }
-  .about-content--title {
+  .about-content__title {
     font-size: 2rem;
   }
-  .about-content--txt {
+  .about-content__txt {
     margin-top: 34px;
   }
-  .about-content--txt p:first-of-type::after {
+  .about-content__txt p:first-of-type::after {
     right: -24.5px;
   }
   .posts h2 {
@@ -1245,7 +1246,7 @@ a {
   .skill-item__title {
     font-size: 1.125rem;
   }
-  .about-content--title {
+  .about-content__title {
     font-size: 1.5rem;
   }
   .form-content {
@@ -1273,11 +1274,11 @@ a {
   .about-content {
     margin-right: 74px;
   }
-  .about-content--txt {
+  .about-content__txt {
     margin-top: 26px;
     font-size: 1rem;
   }
-  .about-content--txt p:first-of-type::after {
+  .about-content__txt p:first-of-type::after {
     right: -18.5px;
   }
   .form-content {
@@ -1289,7 +1290,7 @@ a {
   .posts__block {
     margin-top: 7px;
     grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
-    grid-template-columns: 1fr, 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1326,14 +1327,14 @@ a {
     padding: 0 22px;
     grid-template-areas: "txt" "img";
   }
-  .about-content--title {
+  .about-content__title {
     text-align: center;
   }
-  .about-content--txt {
+  .about-content__txt {
     margin-top: 21px;
     margin-bottom: 39px;
   }
-  .about-content--txt p:first-of-type::after {
+  .about-content__txt p:first-of-type::after {
     display: none;
   }
   .form-content {
