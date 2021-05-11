@@ -7,8 +7,8 @@
       padding-bottom: 70px;
     }
     @include md {
-      padding-top: 49px;
-      padding-bottom: 57px;
+      padding-top: 50px;
+      padding-bottom: 60px;
     }
   }
   &-social {
@@ -19,13 +19,15 @@
 
     margin-bottom: 40px;
 
+    letter-spacing: 0.002em;
+
     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
     &__link {
       padding: 10px;
       .fab {
         transition: color 0.5s;
         // text-decoration: inherit;
-        letter-spacing: 0.004em;
+        // letter-spacing: 0.004em;
 
         font-family: "Font Awesome 5 Brands";
         font-size: 36px;
@@ -78,10 +80,11 @@
 
       font-weight: 100;
     }
-    span {
+    span:nth-of-type(2) {
       letter-spacing: 0.05em;
 
-      color: $color-light;
+      color: rgb(232, 230, 227);
+      // color: $color-light;
 
       font-size: 1rem;
       font-weight: 700;
