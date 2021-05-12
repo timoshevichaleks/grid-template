@@ -805,15 +805,69 @@ a {
   -o-transition: background-color 0.5s, border-color 0.5s;
   transition: background-color 0.5s, border-color 0.5s;
   letter-spacing: 0.15em;
-  border-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(45, 54, 81, 0);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.125rem;
+}
+
+.form-content__input::-webkit-input-placeholder {
+  color: #637588;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.form-content__input::-moz-placeholder {
+  color: #637588;
+  -moz-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.form-content__input:-ms-input-placeholder {
+  color: #637588;
+  -ms-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.form-content__input::-ms-input-placeholder {
+  color: #637588;
+  -ms-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.form-content__input::placeholder {
+  color: #637588;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 .form-content__input:hover, .form-content__input:focus {
   color: rgba(255, 255, 255, 0.99);
-  border-bottom: 2px solid #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-bottom-color: #ffffff;
   outline: none;
   background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-content__input:hover::-webkit-input-placeholder, .form-content__input:focus::-webkit-input-placeholder {
+  color: #8c9bab;
+}
+
+.form-content__input:hover::-moz-placeholder, .form-content__input:focus::-moz-placeholder {
+  color: #8c9bab;
+}
+
+.form-content__input:hover:-ms-input-placeholder, .form-content__input:focus:-ms-input-placeholder {
+  color: #8c9bab;
+}
+
+.form-content__input:hover::-ms-input-placeholder, .form-content__input:focus::-ms-input-placeholder {
+  color: #8c9bab;
+}
+
+.form-content__input:hover::placeholder, .form-content__input:focus::placeholder {
+  color: #8c9bab;
 }
 
 .form-content .btn {
@@ -826,12 +880,14 @@ a {
 .form-content .btn:hover, .form-content .btn:focus {
   border: 2px solid #ffffff;
   background-color: #d66926;
+  cursor: pointer;
 }
 
 .form-content .btn--primary {
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
-  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .posts {
@@ -982,9 +1038,9 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 40px;
+  letter-spacing: 0.002em;
   grid-template-columns: repeat(auto-fit, minmax(50px, -webkit-max-content));
   grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-  letter-spacing: 0.002em;
 }
 
 .footer-social__link {
@@ -1049,8 +1105,8 @@ a {
 }
 
 .footer__title span:nth-of-type(2) {
-  color: #e8e6e3;
   letter-spacing: 0.05em;
+  color: #e8e6e3;
   font-size: 1rem;
   font-weight: 700;
 }

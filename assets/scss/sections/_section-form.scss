@@ -48,14 +48,26 @@
       transition: background-color 0.5s, border-color 0.5s;
       letter-spacing: 0.15em;
 
-      border-color: rgba($color-light, 0.05);
+      border-color: rgba($color-primary, 0);
+      border-bottom-color: rgba($color-light, 0.25);
       background-color: rgba($color-light, 0.05);
+
+      font-size: 1.125rem;
+      &::placeholder {
+        transition: color 0.5s;
+
+        color: $color-gray;
+      }
       &:hover,
       &:focus {
         color: rgba($color-light, 0.99);
-        border-bottom: 2px solid $color-light;
+        border-color: rgba($color-light, 0.25);
+        border-bottom-color: $color-light;
         outline: none;
         background-color: rgba($color-light, 0.15);
+        &::placeholder {
+          color: rgb(140, 155, 171);
+        }
       }
     }
     .btn {
@@ -64,13 +76,16 @@
       transition: background-color 0.5s;
       &:hover,
       &:focus {
+        cursor: pointer;
+
         border: 2px solid $color-light;
         background-color: $color-accent;
       }
       &--primary {
         color: $color-light;
         border-color: rgba($color-light, 0);
-        background-color: rgba($color-light, 0.05);
+        border-bottom-color: rgba($color-light, 0.25);
+        background-color: rgba($color-light, 0.10);
       }
     }
   }
