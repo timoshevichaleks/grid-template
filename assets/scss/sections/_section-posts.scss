@@ -10,6 +10,7 @@
 
     font-family: $font-header;
     font-weight: bold;
+    line-height: 1.2em;
 
     @include lg-min {
       margin: 0;
@@ -39,27 +40,27 @@
 
     gap: $gap;
     @include lg-min {
-      margin-top: 58px;
+      margin-top: 56px;
 
-      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+      grid-template-areas: "a1 a1 a2 a3""a4 a5 a6 a6";
       grid-template-columns: repeat(4, 1fr);
     }
     @include lg-md {
-      margin-top: 32px;
+      margin-top: 42px;
 
-      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
+      grid-template-areas: "a1 a1 a2""a3 a4 a4""a5 a5 a6";
       grid-template-columns: repeat(3, 1fr);
     }
     @include md-sm {
-      margin-top: 7px;
+      margin-top: 36px;
 
-      grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
+      grid-template-areas: "a1 a2""a3 a4""a5 a6";
       grid-template-columns: 1fr 1fr;
     }
     @include sm {
-      margin-top: 11px;
+      margin-top: 36px;
 
-      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
+      grid-template-areas: "a1""a2""a3""a4""a5""a6";
       grid-template-columns: 1fr;
     }
   }
@@ -72,6 +73,7 @@
     font-family: $font-header;
     &__link {
       display: grid;
+      overflow: hidden;
 
       height: 100%;
 
@@ -91,6 +93,7 @@
     &__text {
       display: grid;
       align-content: center;
+      justify-content: center;
 
       padding: $gap;
 
@@ -107,15 +110,14 @@
       p {
         margin: 16px 0;
 
-        letter-spacing: 0.001em;
+        letter-spacing: 0.0001em;
 
         font-family: $font-main;
         font-size: 1rem;
       }
     }
     &:hover {
-      background-color: #d8d8d8/* $color-gray-light */
-      ;
+      background-color: #d8d8d8;
       .posts-article__image img {
         transform: scale(1.1);
       }
