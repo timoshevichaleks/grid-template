@@ -22,7 +22,7 @@
 
     gap: $gap;
     @include sm {
-      align-content: center;
+      align-items: center;
       flex-direction: column;
     }
   }

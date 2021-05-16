@@ -1,15 +1,10 @@
 .footer {
   background-color: $color-primary;
   &__container {
+    padding-top: 50px;
+    padding-bottom: 70px;
+
     @extend %container;
-    @include md-min {
-      padding-top: 50px;
-      padding-bottom: 70px;
-    }
-    @include md {
-      padding-top: 50px;
-      padding-bottom: 60px;
-    }
   }
   &-social {
     position: relative;
@@ -26,8 +21,6 @@
       padding: 10px;
       .fab {
         transition: color 0.5s;
-        // text-decoration: inherit;
-        // letter-spacing: 0.004em;
 
         font-family: "Font Awesome 5 Brands";
         font-size: 36px;
@@ -75,8 +68,6 @@
       margin-right: -0.5em;
 
       letter-spacing: 0.33em;
-      /* normal normal 100 16px/20px "Roboto" */
-      // color: $color-gray-dark;
 
       font-weight: 100;
     }
@@ -84,7 +75,6 @@
       letter-spacing: 0.05em;
 
       color: rgb(232, 230, 227);
-      // color: $color-light;
 
       font-size: 1rem;
       font-weight: 700;

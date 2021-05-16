@@ -363,6 +363,7 @@ template {
 
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
   letter-spacing: 0.1em;
   color: #637588;
   font-family: "Roboto", sans-serif;
@@ -394,7 +395,6 @@ a {
   -webkit-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
-  letter-spacing: 0.1em;
   letter-spacing: 0.1em;
 }
 
@@ -761,10 +761,6 @@ a {
   font-family: "Roboto", sans-serif;
 }
 
-.about-content__txt p:first-of-type {
-  margin: -5px 0 18px;
-}
-
 .about-content__txt p:last-of-type {
   margin: 0;
 }
@@ -772,7 +768,6 @@ a {
 .about-content__txt p:first-of-type::after {
   position: absolute;
   top: 0;
-  right: -50px;
   width: 2px;
   height: 200px;
   content: "";
@@ -794,7 +789,7 @@ a {
 }
 
 .form {
-  padding: 20px 0;
+  padding: 30px 0;
   background-color: #2d3651;
 }
 
@@ -814,6 +809,7 @@ a {
   border-color: rgba(45, 54, 81, 0);
   border-bottom-color: rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.99);
   font-size: 1.125rem;
 }
 
@@ -919,7 +915,6 @@ a {
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
   background-color: #f2f2f2;
-  /* rgb(238, 238, 238) */
   font-family: "Roboto Slab", serif;
 }
 
@@ -943,6 +938,9 @@ a {
 }
 
 .posts-article__image img {
+  /* object-fit: cover; контент подстраивается под блок пропорционально своим размерам */
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
@@ -1042,6 +1040,11 @@ a {
   background-color: #2d3651;
 }
 
+.footer__container {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
 .footer-social {
   position: relative;
   display: grid;
@@ -1111,7 +1114,6 @@ a {
 .footer__title .accent {
   margin-right: -0.5em;
   letter-spacing: 0.33em;
-  /* normal normal 100 16px/20px "Roboto" */
   font-weight: 100;
 }
 
@@ -1161,10 +1163,6 @@ a {
   .form-content {
     grid-template-columns: repeat(3, 1fr);
   }
-  .footer__container {
-    padding-top: 50px;
-    padding-bottom: 70px;
-  }
 }
 
 @media (min-width: 992px) {
@@ -1198,8 +1196,11 @@ a {
   .about-content__txt {
     font-size: 1.125rem;
   }
-  .form {
-    padding: 30px 0;
+  .about-content__txt p:first-of-type {
+    margin: -5px 0 18px;
+  }
+  .about-content__txt p:first-of-type::after {
+    right: -50px;
   }
   .posts h2 {
     margin: 0;
@@ -1221,6 +1222,12 @@ a {
 @media (max-width: 1199.8px) and (min-width: 992px) {
   .form-content {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 991.8px) {
+  .about-content__txt p:first-of-type {
+    margin: -5px 0 16px;
   }
 }
 
@@ -1251,6 +1258,12 @@ a {
     margin-bottom: 42px;
     font-size: 2rem;
   }
+  .about-content__txt p:first-of-type::after {
+    right: -20px;
+  }
+  .posts {
+    padding: 80px 0;
+  }
   .posts h2 {
     margin-top: 0;
     font-size: 2rem;
@@ -1269,6 +1282,7 @@ a {
   .btn--light {
     min-width: 170px;
     height: 40px;
+    letter-spacing: 0.05em;
   }
   .header-menu {
     background-color: rgba(68, 89, 110, 0.25);
@@ -1308,13 +1322,12 @@ a {
   .form-content {
     font-size: 1.125rem;
   }
+  .posts {
+    padding: 60px 0;
+  }
   .posts h2 {
     margin-top: 0;
     font-size: 1.5rem;
-  }
-  .footer__container {
-    padding-top: 50px;
-    padding-bottom: 60px;
   }
 }
 
@@ -1327,6 +1340,9 @@ a {
   .about__container {
     gap: 20px;
     grid-template-columns: 1fr 236px;
+  }
+  .about-content__txt p:first-of-type::after {
+    right: -10px;
   }
   .form-content {
     grid-template-columns: repeat(2, 1fr);
@@ -1352,8 +1368,9 @@ a {
     min-width: 100%;
   }
   .header-content__actions {
-    -ms-flex-line-pack: center;
-        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1373,6 +1390,9 @@ a {
   }
   .about-content__title {
     text-align: center;
+  }
+  .about-content__txt p:first-of-type::after {
+    display: none;
   }
   .form-content {
     grid-template-columns: 1fr;

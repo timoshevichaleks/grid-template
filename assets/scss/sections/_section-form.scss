@@ -1,10 +1,9 @@
 .form {
-  padding: $gap 0;
+  padding: ($gap * 1.5) 0;
 
   background-color: $color-primary;
 
-  @include lg-min {
-    padding: ($gap * 1.5) 0;
+  @include md-min {
   }
   &__container {
     @extend %container;
@@ -48,6 +47,7 @@
       transition: background-color 0.5s, border-color 0.5s;
       letter-spacing: 0.15em;
 
+      color: rgba($color-light, 0.99);
       border-color: rgba($color-primary, 0);
       border-bottom-color: rgba($color-light, 0.25);
       background-color: rgba($color-light, 0.05);

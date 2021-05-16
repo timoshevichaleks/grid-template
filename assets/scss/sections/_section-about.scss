@@ -75,9 +75,14 @@
 
       @include lg-min {
         font-size: 1.125rem;
+        & p:first-of-type {
+          margin: -5px 0 18px;
+        }
       }
-      & p:first-of-type {
-        margin: -5px 0 18px;
+      @include lg {
+        & p:first-of-type {
+          margin: -5px 0 16px;
+        }
       }
       & p:last-of-type {
         margin: 0;
@@ -85,7 +90,6 @@
       & p:first-of-type::after {
         position: absolute;
         top: 0;
-        right: -50px;
 
         width: 2px;
         height: 200px;
@@ -93,6 +97,19 @@
         content: "";
 
         background-color: rgba(99, 117, 136, 0.1);
+
+        @include lg-min {
+          right: -50px;
+        }
+        @include lg-md {
+          right: -20px;
+        }
+        @include md-sm {
+          right: -10px;
+        }
+        @include sm {
+          display: none;
+        }
       }
     }
   }
